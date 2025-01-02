@@ -3,7 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+import toml
 
+try:
+    config = toml.load("config.toml")
+except Exception as e:
+    print(f"Error loading config.toml: {e}")
 
 # App Title
 st.title('File Uploader and Viewer')
